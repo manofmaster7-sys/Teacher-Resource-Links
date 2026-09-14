@@ -28,26 +28,28 @@
             width: 100%;
             background-color: #ffffff;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            padding: 20px 40px;
+            padding: 15px 30px;
+            direction: ltr; /* لتثبيت الأماكن */
+        }
+
+        .header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            direction: ltr; /* تثبيت اتجاه الهيدر دائماً لمنع انقلاب الشعارات */
-        }
-
-        .header-section-right {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            width: 140px;
+            width: 100%;
         }
 
         .header-section-left {
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            gap: 12px;
-            width: 140px;
+            gap: 10px;
+        }
+
+        .header-section-right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
         }
 
         .logo-box {
@@ -70,7 +72,7 @@
             background-color: #e2e8f0;
             color: #2d3748;
             border: 2px solid #cbd5e0;
-            padding: 6px 12px;
+            padding: 6px 14px;
             border-radius: 8px;
             font-weight: bold;
             font-size: 14px;
@@ -86,7 +88,7 @@
         /* العنوان في الوسط */
         .header-title {
             text-align: center;
-            flex-grow: 1;
+            margin-top: 10px;
         }
 
         .header-title h1 {
@@ -151,41 +153,39 @@
             background-color: #22543d;
         }
 
-        /* تحسين مظهر الشعارات والعنوان خصيصاً للهواتف الذكية */
-        @media (max-width: 600px) {
+        /* تنسيق الأجهزة المكتبية وشاشات الكمبيوتر */
+        @media (min-width: 769px) {
             header {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 15px 0;
-                padding: 15px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 40px;
             }
 
-            .header-section-left {
-                grid-column: 1;
-                grid-row: 1;
+            .header-top {
                 width: auto;
-                justify-content: flex-start;
-            }
-
-            .header-section-right {
-                grid-column: 2;
-                grid-row: 1;
-                width: auto;
-                justify-content: flex-end;
+                order: 1;
             }
 
             .header-title {
-                grid-column: 1 / -1;
-                grid-row: 2;
-                margin-top: 5px;
+                margin-top: 0;
+                order: 2;
+                flex-grow: 1;
             }
 
-            .header-title h1 {
-                font-size: 20px;
+            .header-section-right {
+                order: 3;
             }
 
-            .header-title p {
-                font-size: 14px;
+            .header-section-left {
+                order: 1;
+            }
+        }
+
+        /* تعديلات خفيفة للهواتف الذكية */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px;
             }
 
             .logo-box {
@@ -193,8 +193,16 @@
                 height: 65px;
             }
 
+            .header-title h1 {
+                font-size: 20px;
+            }
+
+            .header-title p {
+                font-size: 13px;
+            }
+
             main {
-                margin-top: 1.5cm;
+                margin-top: 2cm;
             }
         }
     </style>
@@ -202,22 +210,25 @@
 <body>
 
     <header>
-        <!-- القسم الأيسر: زر الترجمة وشعار الجمعية -->
-        <div class="header-section-left">
-            <button class="lang-btn" id="lang-toggle-btn" onclick="toggleLanguage()">TR</button>
-            <div class="logo-box">
-                <img src="association-logo.png" alt="شعار الجمعية">
+        <!-- الصف العلوي للشعارات وزر الترجمة -->
+        <div class="header-top">
+            <!-- الشعار والزر على اليسار: زر الترجمة + شعار الجمعية -->
+            <div class="header-section-left">
+                <button class="lang-btn" id="lang-toggle-btn" onclick="toggleLanguage()">TR</button>
+                <div class="logo-box">
+                    <img src="association-logo.png" alt="شعار الجمعية">
+                </div>
+            </div>
+
+            <!-- الشعار على اليمين: شعار المدرسة -->
+            <div class="header-section-right">
+                <div class="logo-box">
+                    <img src="school-logo.png" alt="شعار المدرسة">
+                </div>
             </div>
         </div>
 
-        <!-- القسم الأيمن: شعار المدرسة -->
-        <div class="header-section-right">
-            <div class="logo-box">
-                <img src="school-logo.png" alt="شعار المدرسة">
-            </div>
-        </div>
-
-        <!-- العنوان في الوسط (في الهاتف ينزل تحت الشعارات بشكل مصفوف) -->
+        <!-- العنوان في الوسط تحتهما مباشرة على الهاتف وفي المنتصف تماماً على الكمبيوتر -->
         <div class="header-title">
             <h1 id="txt-title">الروابط المساعدة للمدرس</h1>
             <p id="txt-year">للعام الدراسي 2026 - 2027</p>
