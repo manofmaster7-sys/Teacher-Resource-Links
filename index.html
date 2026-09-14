@@ -39,23 +39,23 @@
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            width: 120px;
+            width: 140px;
         }
 
         .header-section-left {
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            gap: 15px;
-            width: 120px;
+            gap: 12px;
+            width: 140px;
         }
 
         .logo-box {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
         }
 
         /* تنسيق صور الشعارات */
@@ -70,10 +70,10 @@
             background-color: #e2e8f0;
             color: #2d3748;
             border: 2px solid #cbd5e0;
-            padding: 8px 16px;
+            padding: 6px 12px;
             border-radius: 8px;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 14px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -91,13 +91,13 @@
 
         .header-title h1 {
             color: #1a365d;
-            font-size: 26px;
+            font-size: 24px;
             margin-bottom: 5px;
         }
 
         .header-title p {
             color: #718096;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
         }
 
@@ -109,7 +109,6 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            /* مسافة 4 سم من الأعلى */
             margin-top: 4cm;
         }
 
@@ -152,24 +151,50 @@
             background-color: #22543d;
         }
 
-        /* التجاوب مع الهواتف الذكية */
+        /* تحسين مظهر الشعارات والعنوان خصيصاً للهواتف الذكية */
         @media (max-width: 600px) {
             header {
-                flex-direction: column-reverse;
-                gap: 15px;
-                padding: 20px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px 0;
+                padding: 15px 20px;
             }
 
-            .header-section-right, .header-section-left {
+            .header-section-left {
+                grid-column: 1;
+                grid-row: 1;
                 width: auto;
+                justify-content: flex-start;
+            }
+
+            .header-section-right {
+                grid-column: 2;
+                grid-row: 1;
+                width: auto;
+                justify-content: flex-end;
+            }
+
+            .header-title {
+                grid-column: 1 / -1;
+                grid-row: 2;
+                margin-top: 5px;
             }
 
             .header-title h1 {
                 font-size: 20px;
             }
 
+            .header-title p {
+                font-size: 14px;
+            }
+
+            .logo-box {
+                width: 65px;
+                height: 65px;
+            }
+
             main {
-                margin-top: 2cm;
+                margin-top: 1.5cm;
             }
         }
     </style>
@@ -185,22 +210,22 @@
             </div>
         </div>
 
-        <!-- العنوان في الوسط -->
-        <div class="header-title">
-            <h1 id="txt-title">الروابط المساعدة للمدرس</h1>
-            <p id="txt-year">للعام الدراسي 2026 - 2027</p>
-        </div>
-
         <!-- القسم الأيمن: شعار المدرسة -->
         <div class="header-section-right">
             <div class="logo-box">
                 <img src="school-logo.png" alt="شعار المدرسة">
             </div>
         </div>
+
+        <!-- العنوان في الوسط (في الهاتف ينزل تحت الشعارات بشكل مصفوف) -->
+        <div class="header-title">
+            <h1 id="txt-title">الروابط المساعدة للمدرس</h1>
+            <p id="txt-year">للعام الدراسي 2026 - 2027</p>
+        </div>
     </header>
 
     <main>
-        <!-- الزر الأول (تم تعديل المسمى) -->
+        <!-- الزر الأول -->
         <a href="https://manofmaster7-sys.github.io/school-cleaning-eval/" target="_blank" class="btn" id="btn-cleaning">
             تقييم النظافة في المدرسة
         </a>
