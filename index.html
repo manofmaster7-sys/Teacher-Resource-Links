@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-tag">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">الروابط المساعدة للمدرس</title>
+    <!-- خط تجوالي من غوغل -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* الهيدر وشعارات الموقع */
+        header {
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            direction: ltr; /* تثبيت اتجاه الهيدر دائماً لمنع انقلاب الشعارات */
+        }
+
+        .header-section-right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 120px;
+        }
+
+        .header-section-left {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 15px;
+            width: 120px;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90px;
+            height: 90px;
+        }
+
+        /* تنسيق صور الشعارات */
+        .logo-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* زر الترجمة */
+        .lang-btn {
+            background-color: #e2e8f0;
+            color: #2d3748;
+            border: 2px solid #cbd5e0;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background-color: #cbd5e0;
+            color: #1a202c;
+        }
+
+        /* العنوان في الوسط */
+        .header-title {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .header-title h1 {
+            color: #1a365d;
+            font-size: 26px;
+            margin-bottom: 5px;
+        }
+
+        .header-title p {
+            color: #718096;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* محتوى الصفحة والأزرار */
+        main {
+            width: 100%;
+            max-width: 600px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            /* مسافة 4 سم من الأعلى */
+            margin-top: 4cm;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 18px 25px;
+            background-color: #2b6cb0;
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2c5282;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-protected {
+            background-color: #c53030;
+        }
+
+        .btn-protected:hover {
+            background-color: #9b2c2c;
+        }
+
+        .btn-sheet {
+            background-color: #276749;
+        }
+
+        .btn-sheet:hover {
+            background-color: #22543d;
+        }
+
+        /* التجاوب مع الهواتف الذكية */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column-reverse;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            .header-section-right, .header-section-left {
+                width: auto;
+            }
+
+            .header-title h1 {
+                font-size: 20px;
+            }
+
+            main {
+                margin-top: 2cm;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- القسم الأيسر: زر الترجمة وشعار الجمعية -->
+        <div class="header-section-left">
+            <button class="lang-btn" id="lang-toggle-btn" onclick="toggleLanguage()">TR</button>
+            <div class="logo-box">
+                <img src="association-logo.png" alt="شعار الجمعية">
+            </div>
+        </div>
+
+        <!-- العنوان في الوسط -->
+        <div class="header-title">
+            <h1 id="txt-title">الروابط المساعدة للمدرس</h1>
+            <p id="txt-year">للعام الدراسي 2026 - 2027</p>
+        </div>
+
+        <!-- القسم الأيمن: شعار المدرسة -->
+        <div class="header-section-right">
+            <div class="logo-box">
+                <img src="school-logo.png" alt="شعار المدرسة">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- الزر الأول (تم تعديل المسمى) -->
+        <a href="https://manofmaster7-sys.github.io/school-cleaning-eval/" target="_blank" class="btn" id="btn-cleaning">
+            تقييم النظافة في المدرسة
+        </a>
+
+        <!-- الزر الثاني (محمي بكلمة سر) -->
+        <button class="btn btn-protected" id="btn-plans" onclick="openProtectedLink()">
+            الخطط السنوية لرؤساء الأقسام 🔒
+        </button>
+
+        <!-- الزر الثالث -->
+        <a href="https://docs.google.com/spreadsheets/d/1tbbTiHFPEsqaSJOu-K1b99brwUsRU5J7aKNR_M2-ew0/edit?usp=sharing" target="_blank" class="btn btn-sheet" id="btn-weekly">
+            الخطط الاسبوعية لأولياء الأمور
+        </a>
+    </main>
+
+    <script>
+        let currentLang = 'ar';
+
+        const translations = {
+            ar: {
+                pageTitle: "الروابط المساعدة للمدرس",
+                mainTitle: "الروابط المساعدة للمدرس",
+                subTitle: "للعام الدراسي 2026 - 2027",
+                btnCleaning: "تقييم النظافة في المدرسة",
+                btnPlans: "الخطط السنوية لرؤساء الأقسام 🔒",
+                btnWeekly: "الخطط الاسبوعية لأولياء الأمور",
+                pwdPrompt: "يرجى إدخال كلمة السر للدخول إلى الخطط السنوية:",
+                pwdError: "كلمة السر غير صحيحة! يرجى المحاولة مرة أخرى.",
+                langBtnText: "TR"
+            },
+            tr: {
+                pageTitle: "Öğretmen Yardımcı Bağlantıları",
+                mainTitle: "Öğretmen Yardımcı Bağlantıları",
+                subTitle: "2026 - 2027 Eğitim-Öğretim Yılı",
+                btnCleaning: "Okul Temizlik Değerlendirmesi",
+                btnPlans: "Bölüm Başkanları Yıllık Planları 🔒",
+                btnWeekly: "Veliler İçin Haftalık Planlar",
+                pwdPrompt: "Lütfen yıllık planlara erişmek için şifreyi giriniz:",
+                pwdError: "Yanlış şifre! Lütfen tekrar deneyiniz.",
+                langBtnText: "AR"
+            }
+        };
+
+        function toggleLanguage() {
+            const htmlTag = document.getElementById('html-tag');
+            
+            if (currentLang === 'ar') {
+                currentLang = 'tr';
+                htmlTag.setAttribute('dir', 'ltr');
+                htmlTag.setAttribute('lang', 'tr');
+            } else {
+                currentLang = 'ar';
+                htmlTag.setAttribute('dir', 'rtl');
+                htmlTag.setAttribute('lang', 'ar');
+            }
+
+            // تطبيق النصوص المترجمة
+            document.getElementById('page-title').innerText = translations[currentLang].pageTitle;
+            document.getElementById('txt-title').innerText = translations[currentLang].mainTitle;
+            document.getElementById('txt-year').innerText = translations[currentLang].subTitle;
+            document.getElementById('btn-cleaning').innerText = translations[currentLang].btnCleaning;
+            document.getElementById('btn-plans').innerText = translations[currentLang].btnPlans;
+            document.getElementById('btn-weekly').innerText = translations[currentLang].btnWeekly;
+            document.getElementById('lang-toggle-btn').innerText = translations[currentLang].langBtnText;
+        }
+
+        function openProtectedLink() {
+            const password = prompt(translations[currentLang].pwdPrompt);
+            
+            if (password === "10203055") {
+                window.open("https://drive.google.com/drive/folders/1yUkbiNxybjvBe0gBHTrTe_QRptHCPOXK?usp=sharing", "_blank");
+            } else if (password !== null) {
+                alert(translations[currentLang].pwdError);
+            }
+        }
+    </script>
+
+</body>
+</html>
